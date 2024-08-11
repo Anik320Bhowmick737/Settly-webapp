@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cash Flow Minimizer</title>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Settly</h1>
+    </header>
+    <div class="dropdown-menu-overlay" id="dropdown-menu-overlay"></div>
+    <section
+      style="
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 15vh;
+        flex-wrap: wrap;
+      "
+    >
+      <form id="Initialfill">
+        <label for="quantity">Number of person : </label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="3"
+          max="10"
+          required
+          value="3"
+        />
+        <button class="btn numPerson" type="submit">Go</button>
+      </form>
+      <div class="PayerList">
+        <div class="P P1">
+          Person 1 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="amount">
+              <p style="margin-top: 2px">Person 1 is paying</p>
+              <label for="P1Money">Amount : </label>
+              <input
+                type="number"
+                id="P1Money"
+                class="Money payer"
+                name="P1Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P1 dropdownBtn-section">
+              <button class="P1 dropdownBtnSPE">Split Equally</button>
+              <button class="P1 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P1 Payees">
+              <div class="p1 P11">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P12">
+                <label for="P1MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P13">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P14">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P15">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P16">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P17">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P18">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P19">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p1 P110">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p1"></div>
+          </div>
+        </div>
+        <div class="P P2">
+          Person 2 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="amount">
+              <p style="margin-top: 2px">Person 2 is paying</p>
+              <label for="P2Money">Amount : </label>
+              <input
+                type="number"
+                id="P2Money"
+                class="Money"
+                name="P2Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P2 dropdownBtn-section">
+              <button class="P2 dropdownBtnSPE">Split Equally</button>
+              <button class="P2 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P2 Payees">
+              <div class="p2 P21">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P22">
+                <label for="P1MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P23">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P24">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P25">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P26">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P27">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P28">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P29">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p2 P210">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p2"></div>
+          </div>
+        </div>
+        <div class="P P3">
+          Person 3 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="amount">
+              <p style="margin-top: 2px">Person 3 is paying</p>
+              <label for="P3Money">Amount : </label>
+              <input
+                type="number"
+                id="P3Money"
+                name="P3Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P3 dropdownBtn-section">
+              <button class="P3 dropdownBtnSPE">Split Equally</button>
+              <button class="P3 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P3 Payees">
+              <div class="p3 P31">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P32">
+                <label for="P1MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P33">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P34">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P35">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P36">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P37">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P38">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P39">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p3 P310">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p3"></div>
+          </div>
+        </div>
+        <div class="P P4">
+          Person 4 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P4 amount">
+              <p style="margin-top: 2px">Person 3 is paying</p>
+              <label for="P4Money">Amount : </label>
+              <input
+                type="number"
+                id="P4Money"
+                name="P4Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P4 dropdownBtn-section">
+              <button class="P4 dropdownBtnSPE">Split Equally</button>
+              <button class="P4 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P4 Payees">
+              <div class="p4 P41">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P42">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P43">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P44">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P45">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P46">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P47">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P48">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P49">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p4 P410">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p4"></div>
+          </div>
+        </div>
+        <div class="P P5">
+          Person 5 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P5 amount">
+              <p style="margin-top: 2px">Person 5 is paying</p>
+              <label for="P5Money">Amount : </label>
+              <input
+                type="number"
+                id="P5Money"
+                name="P5Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P5 dropdownBtn-section">
+              <button class="P5 dropdownBtnSPE">Split Equally</button>
+              <button class="P5 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P5 Payees">
+              <div class="p5 P51">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P52">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P53">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P54">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P55">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P56">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P57">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P58">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P59">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p5 P510">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p5"></div>
+          </div>
+        </div>
+        <div class="P P6">
+          Person 6 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P6 amount">
+              <p style="margin-top: 2px">Person 6 is paying</p>
+              <label for="P6Money">Amount : </label>
+              <input
+                type="number"
+                id="P6Money"
+                name="P6Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P6 dropdownBtn-section">
+              <button class="P6 dropdownBtnSPE">Split Equally</button>
+              <button class="P6 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P6 Payees">
+              <div class="p6 P61">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P62">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P63">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P64">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P65">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P66">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P67">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P68">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P69">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p6 P610">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p6"></div>
+          </div>
+        </div>
+        <div class="P P7">
+          Person 7 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P7 amount">
+              <p style="margin-top: 2px">Person 7 is paying</p>
+              <label for="P7Money">Amount : </label>
+              <input
+                type="number"
+                id="P7Money"
+                name="P7Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P7 dropdownBtn-section">
+              <button class="P7 dropdownBtnSPE">Split Equally</button>
+              <button class="P7 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P7 Payees">
+              <div class="p7 P71">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P72">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P73">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P74">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P75">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P76">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P77">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P78">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P79">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p7 P710">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p7"></div>
+          </div>
+        </div>
+        <div class="P P8">
+          Person 8 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P8 amount">
+              <p style="margin-top: 2px">Person 8 is paying</p>
+              <label for="P8Money">Amount : </label>
+              <input
+                type="number"
+                id="P8Money"
+                name="P8Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P8 dropdownBtn-section">
+              <button class="P8 dropdownBtnSPE">Split Equally</button>
+              <button class="P8 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P8 Payees">
+              <div class="p8 P81">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P82">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P83">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P84">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P85">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P86">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P87">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P88">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P89">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p8 P810">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p8"></div>
+          </div>
+        </div>
+        <div class="P P9">
+          Person 9 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P9 amount">
+              <p style="margin-top: 2px">Person 9 is paying</p>
+              <label for="P9Money">Amount : </label>
+              <input
+                type="number"
+                id="P9Money"
+                name="P9Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P9 dropdownBtn-section">
+              <button class="P9 dropdownBtnSPE">Split Equally</button>
+              <button class="P9 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P9 Payees">
+              <div class="p9 P91">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P92">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P93">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P94">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P95">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P96">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P97">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P98">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P99">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p9 P910">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p9"></div>
+          </div>
+        </div>
+        <div class="P P10">
+          Person 10 <i class="arrow"></i>
+          <div class="dropdown-menu">
+            <section class="P10 amount">
+              <p style="margin-top: 2px">Person 10 is paying</p>
+              <label for="P10 Money">Amount : </label>
+              <input
+                type="number"
+                id="P10Money"
+                name="P10Money"
+                class="Money"
+                min="0"
+                value="0"
+              />
+            </section>
+            <section class="P10 dropdownBtn-section">
+              <button class="P10 dropdownBtnSPE">Split Equally</button>
+              <button class="P10 dropdownBtnSPEx">Split Exact</button>
+            </section>
+            <br />
+            <section class="P10 Payees">
+              <div class="p10 P101">
+                <label for="P1MoneyPayee">Person 1 : </label>
+                <input
+                  type="number"
+                  id="P1MoneyPayee"
+                  class="Money payee"
+                  name="P1Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P102">
+                <label for="P2MoneyPayee">Person 2 : </label>
+                <input
+                  type="number"
+                  id="P2MoneyPayee"
+                  class="Money payee"
+                  name="P2Money"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P103">
+                <label for="P3MoneyPayee">Person 3 : </label>
+                <input
+                  type="number"
+                  id="P3MoneyPayee"
+                  class="Money payee"
+                  name="P3MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P104">
+                <label for="P4MoneyPayee">Person 4 : </label>
+                <input
+                  type="number"
+                  id="P4MoneyPayee"
+                  class="Money payee"
+                  name="P4MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P105">
+                <label for="P5MoneyPayee">Person 5 : </label>
+                <input
+                  type="number"
+                  id="P5MoneyPayee"
+                  class="Money payee"
+                  name="P5MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P106">
+                <label for="P6MoneyPayee">Person 6 : </label>
+                <input
+                  type="number"
+                  id="P6MoneyPayee"
+                  class="Money payee"
+                  name="P6MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P107">
+                <label for="P7MoneyPayee">Person 7 : </label>
+                <input
+                  type="number"
+                  id="P7MoneyPayee"
+                  class="Money payee"
+                  name="P7MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P108">
+                <label for="P8MoneyPayee">Person 8 : </label>
+                <input
+                  type="number"
+                  id="P8MoneyPayee"
+                  class="Money payee"
+                  name="P8MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P109">
+                <label for="P9MoneyPayee">Person 9 : </label>
+                <input
+                  type="number"
+                  id="P9MoneyPayee"
+                  class="Money payee"
+                  name="P9MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+              <div class="p10 P1010">
+                <label for="P10MoneyPayee">Person 10 : </label>
+                <input
+                  type="number"
+                  id="P10MoneyPayee"
+                  class="Money payee"
+                  name="P10MoneyPayee"
+                  min="0"
+                  value="0"
+                />
+              </div>
+            </section>
+            <div class="result p10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="FinalSection"
+      style="display: flex; justify-content: center"
+    >
+      <section class="ResultSection">
+        <div class="ResultContent">
+          <div class="PersonWillPayTextOverlay"></div>
+          <button class="Person1 PersonWillPayBtn">Person 1</button>
+          <button class="Person2 PersonWillPayBtn">Person 2</button>
+          <button class="Person3 PersonWillPayBtn">Person 3</button>
+          <button class="Person4 PersonWillPayBtn">Person 4</button>
+          <button class="Person5 PersonWillPayBtn">Person 5</button>
+          <button class="Person6 PersonWillPayBtn">Person 6</button>
+          <button class="Person7 PersonWillPayBtn">Person 7</button>
+          <button class="Person8 PersonWillPayBtn">Person 8</button>
+          <button class="Person9 PersonWillPayBtn">Person 9</button>
+          <button class="Person10 PersonWillPayBtn">Person 10</button>
+          <div class="Person1 PersonWillPayText">
+            <p class="P1Payer">Person 1 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person2 PersonWillPayText">
+            <p class="P2Payer">Person 2 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person3 PersonWillPayText">
+            <p class="P3Payer">Person 3 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person4 PersonWillPayText">
+            <p class="P4Payer">Person 4 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person5 PersonWillPayText">
+            <p class="P5Payer">Person 5 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person6 PersonWillPayText">
+            <p class="P6Payer">Person 6 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person7 PersonWillPayText">
+            <p class="P7Payer">Person 7 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person8 PersonWillPayText">
+            <p class="P8Payer">Person 8 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person9 PersonWillPayText">
+            <p class="P6Payer">Person 9 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+          <div class="Person10 PersonWillPayText">
+            <p class="P10Payer">Person 10 will Pay:</p>
+            <p class="Person1get get">Person 1</p>
+            <p class="Person2get get">Person 2</p>
+            <p class="Person3get get">Person 3</p>
+            <p class="Person4get get">Person 4</p>
+            <p class="Person5get get">Person 5</p>
+            <p class="Person6get get">Person 6</p>
+            <p class="Person7get get">Person 7</p>
+            <p class="Person8get get">Person 8</p>
+            <p class="Person9get get">Person 9</p>
+            <p class="Person10get get">Person 10</p>
+            <p class="nothing get">Nothing</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section
+      class="Controllers"
+      style="display: flex; justify-content: center; gap: 5vw; margin-top: 4vw"
+    >
+      <button class="ResetBtn">
+        Reset
+        <div class="ResetBtn2"></div>
+      </button>
+      <button class="Calculate">
+        Calculate
+        <div class="Calculate2"></div>
+      </button>
+    </section>
+  </body>
+  <footer class="endnote">Developed by Anik ❤️</footer>
+  <script src="script.js"></script>
+</html>

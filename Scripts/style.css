@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Grey+Qo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Shadows+Into+Light&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(90deg, #a9f1df, #ffbbbb);
+}
+h1 {
+  font-family: "Grey Qo", cursive;
+  font-weight: 800;
+  color: #177706;
+  font-style: normal;
+  text-align: center;
+  font-size: 7rem;
+  margin-top: 2vh;
+}
+#Initialfill {
+  font-size: 2rem;
+  text-align: center;
+}
+#quantity {
+  width: 10%;
+  min-width: 40px;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 2px solid #1202ef;
+  border-radius: 4px;
+  text-align: center;
+}
+.PayeeList {
+  margin-top: 2vw;
+}
+.P {
+  border: none;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #414d0b 0%,
+    #727a17 51%,
+    #414d0b 100%
+  );
+  color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 150px;
+  font-weight: 700;
+  transition: 1s;
+  text-align: center;
+  position: relative;
+  display: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 5px rgba(50, 50, 93, 0.907), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.P:hover {
+  background-position: right center;
+  font-weight: 600;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+/*.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 0.6vw;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}*/
+.dropdown-menu {
+  font-size: 1rem;
+  display: none;
+  overflow: hidden;
+  background: #e2ddb3;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25vw;
+  max-width: 280px;
+  min-width: 200px;
+  transition: 1s;
+  z-index: 100; /* Ensure it appears above other content */
+}
+.dropdown-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 99;
+  display: none;
+}
+
+.dropdownBtn-section {
+  display: flex;
+  justify-content: space-around;
+}
+.Money {
+  width: 5vw;
+  outline: none;
+  border: none;
+  border-bottom: 1px black solid;
+  background-color: transparent;
+  text-align: center;
+  appearance: none;
+  margin-bottom: 5px;
+}
+.Money::-webkit-inner-spin-button,
+.Money::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.selected {
+  background-color: green;
+  color: white;
+  border-radius: 2px;
+  border: none;
+}
+.addError {
+  color: red;
+  font-size: 600;
+}
+.addCorrect {
+  color: rgb(29, 121, 3);
+  font-size: 600;
+}
+.ResultSection {
+  display: none;
+  max-width: 900px;
+  width: 80vw;
+}
+.ResultContent {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  align-content: center;
+  align-items: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+.ResultContent .PersonWillPayBtn {
+  display: none;
+  margin-bottom: 5vh;
+}
+.PersonWillPayBtn {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #7bdff2 10px 30px,
+    #b2f7ef 30px 50px,
+    #eff7f6 50px 70px,
+    #f7d6e0 70px 90px,
+    #f2b5d4 90px 110px
+  );
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 4px 5px rgba(50, 50, 93, 0.907), 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 7vw;
+  height: 2vw;
+  min-height: 40px;
+  max-width: 200px;
+  min-width: 100px;
+  transition: 0.5s;
+  background-size: 300% 300%;
+  font-size: 1rem;
+  text-align: center;
+}
+.PersonWillPayBtn:hover {
+  background-position: 20% center;
+}
+.ResultContent .get {
+  display: none;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+.PersonWillPayText p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  align-self: center;
+}
+.PersonWillPayText {
+  padding-top: 1.5vw;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 3px;
+  width: 30vw;
+  max-height: 70vw;
+  text-align: center;
+  background-color: #f5dddd;
+  transition: 1s;
+}
+
+.PersonWillPayTextOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: none;
+  z-index: 9;
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right,
+    #aa076b 0%,
+    #61045f 51%,
+    #aa076b 100%
+  );
+  margin-left: 2vw;
+  text-align: center;
+  width: 80px;
+  height: 50px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 4px 5px rgba(50, 50, 93, 0.907), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  font-size: 2rem;
+  border: none;
+}
+
+.btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  color: rgb(180, 243, 196);
+}
+.Controllers .ResetBtn,
+.Controllers .Calculate {
+  position: relative;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  animation: anime 16s linear infinite;
+}
+.ResetBtn2,
+.Calculate2 {
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  animation: anime 16s linear infinite;
+}
+.ResetBtn2,
+.Calculate2 {
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  filter: blur(30px);
+  opacity: 0.8;
+}
+
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.endnote {
+  font-family: "Grey Qo", cursive;
+  position: absolute;
+  bottom: 0px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.614);
+  padding: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
